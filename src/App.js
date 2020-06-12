@@ -1,24 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
+import logo from './assets/logo.svg'
 import './App.css';
+import { playCChord, playCMajorScale, rollingInTheDeep } from 'synth/synth'
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
+      <main>
+        <button onClick={playCChord}>C chord</button>
+        <button onClick={playCMajorScale}>CMaj scale</button>
+        <button onClick={rollingInTheDeep}>Adele</button>
+      </main>
     </div>
   );
 }
