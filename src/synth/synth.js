@@ -20,13 +20,13 @@ export function rollingInTheDeep() {
 }
 
 
-export function playCMajorScale () {
-  x.playMelody(getScale('C'))
+export function playMajorScale (scale) {
+  x.playMelody(getScale(scale))
 
 }
 
 export function playCChord () {
-  x.playNote({ frequency: 130.81}, 2000) // tonic
-  x.playNote({ frequency: 164.81}, 2000) // major third
-  x.playNote({ frequency: 196.00}, 2000) // major fifth
+  x.playNote({ frequency: 130.81 }, 2000) // tonic
+  x.playNote({ frequency: 164.81 }, 2000) // major third
+  x.playNote({ frequency: 196.00 }, 2000) // major fifth
 }
