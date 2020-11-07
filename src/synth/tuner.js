@@ -19,3 +19,11 @@ export const getScale = (tonic = 'C', type = 'major', reference = 3) => {
     label: octave[(octave.indexOf(tonic) + step) % 12]
   }))
 }
+
+export const getFrequencyFromNote = (note, noteOctave) => {
+  const [baseNote, accident] = note
+  const accidentShift = accident ? (accident === "#" ? 1 : -1) : 0
+  const refFrequency = ATuning[noteOctave]
+  const startingPoint = octave.indexOf(baseNote) - octave.indexOf('A') + accidentShift
+  return getNoteFrequency(refFrequency, startingPoint)
+}

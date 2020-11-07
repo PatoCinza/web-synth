@@ -26,7 +26,10 @@ export function playMajorScale (scale) {
 }
 
 export function playCChord () {
-  x.playNote({ frequency: 130.81 }, 2000) // tonic
-  x.playNote({ frequency: 164.81 }, 2000) // major third
-  x.playNote({ frequency: 196.00 }, 2000) // major fifth
+  const CChordNote = [
+    { note: "C", octave: 3}, //tonic
+    { note: "E", octave: 3}, //third
+    { note: "G", octave: 3 }, // fifth
+  ]
+  x.playChord(CChordNote)
 }
