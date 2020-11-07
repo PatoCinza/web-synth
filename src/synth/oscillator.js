@@ -21,9 +21,9 @@ export function squareOscillator () {
       0.20618556701030927,
       0.020618556701030927,
     ];
-    const imag = real.map(()=>0)
+    const imag = real.map(() => 0)
 
-    const wave = audioContext.createPeriodicWave(Float32Array.from(real), Float32Array.from(imag), {disableNormalization: true})
+    const wave = audioContext.createPeriodicWave(Float32Array.from(real), Float32Array.from(imag), { disableNormalization: true })
     oscillator.setPeriodicWave(wave)
     oscillator.connect(audioContext.destination)
 
@@ -34,9 +34,9 @@ export function squareOscillator () {
 
   const getNoteDuration = (size) => (1000 * 60 / bpm) * (size || 1)
 
-  function playNote ({frequency, note, octave, size}) {
+  function playNote ({ frequency, note, octave, size }) {
     const oscillator = createCustomOscillator()
-    const noteFrequency = frequency || getFrequencyFromNote(note, octave)
+    const noteFrequency = typeof frequency === "undefined" ? getFrequencyFromNote(note, octave) : frequency
     oscillator.frequency.value = noteFrequency
     oscillator.start()
 
