@@ -1,9 +1,11 @@
 import React from 'react';
 import logo from './assets/logo.svg'
 import './App.css';
-import { playCChord, playCMajorScale, rollingInTheDeep } from 'synth/synth'
+import { playCChord, playMajorScale, rollingInTheDeep, badRomance } from 'synth/synth'
 
 function App() {
+  const playCMajorScale = playMajorScale;
+
   return (
     <div className="App">
       <header className="App-header">
@@ -13,6 +15,7 @@ function App() {
         <button onClick={playCChord}>C chord</button>
         <button onClick={playCMajorScale}>CMaj scale</button>
         <button onClick={rollingInTheDeep}>Adele</button>
+        <button onClick={badRomance}>Bad Romance</button>
       </main>
     </div>
   );

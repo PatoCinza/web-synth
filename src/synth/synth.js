@@ -19,6 +19,34 @@ export function rollingInTheDeep() {
   ])
 }
 
+export function badRomance() {
+  const synthetizer = squareOscillator()
+  synthetizer.setBPM(120)
+  synthetizer.playMelody([
+    { note: 'C', octave: 3, size: 1 },
+    { note: 'D', octave: 3, size: 1 },
+    { note: 'E', octave: 3, size: 1 },
+    { note: 'C', octave: 3, size: 1 },
+    { note: 'F', octave: 3, size: 1.5 },
+    { note: 'F', octave: 3, size: 1 },
+    { note: 'E', octave: 3, size: 1 },
+    { note: 'F', octave: 3, size: 1 },
+    { note: 'E', octave: 3, size: 1 },
+    { note: 'D', octave: 3, size: 1 },
+    { frequency: 0},
+    { note: 'B', octave: 3, size: 1 },
+    { note: 'C', octave: 3, size: 1 },
+    { note: 'D', octave: 3, size: 1 },
+    { note: 'E', octave: 3, size: 1 },
+    { frequency: 0 },
+    { note: 'E', octave: 3, size: 1 },
+    { note: 'F', octave: 3, size: 1 },
+    { note: 'E', octave: 3, size: 1 },
+    { note: 'D', octave: 3, size: 1 },
+    { note: 'C', octave: 3, size: 1 }
+  ])
+}
+
 
 export function playMajorScale (scale) {
   x.playMelody(getScale(scale))
@@ -26,7 +54,10 @@ export function playMajorScale (scale) {
 }
 
 export function playCChord () {
-  x.playNote({ frequency: 130.81 }, 2000) // tonic
-  x.playNote({ frequency: 164.81 }, 2000) // major third
-  x.playNote({ frequency: 196.00 }, 2000) // major fifth
+  const CChordNote = [
+    { note: "C", octave: 3 }, //tonic
+    { note: "E", octave: 3 }, //third
+    { note: "G", octave: 3 }, // fifth
+  ]
+  x.playChord(CChordNote)
 }
